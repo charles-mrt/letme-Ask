@@ -40,7 +40,7 @@ The app will be available for access on your browser at http://localhost:3000
 
 You can view the project layout through the links below:
 
-- [Layout Web]() 
+- [Layout Web](https://www.figma.com/file/wIrvL41S7kP5MWFkxs527g/Letmeask-nlw-charles-Copy) 
 
 Remembering that you need to have a [Figma](http://figma.com/) account to access it.
 
