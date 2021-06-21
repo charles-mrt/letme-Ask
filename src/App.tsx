@@ -1,9 +1,8 @@
+import { Home } from "./pages/Home";
 
 function App() {
   return (
-    <h1>
-      🕗  wait... 
-    </h1>
+    <Home />
   );
 }
 
