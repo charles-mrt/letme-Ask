@@ -6,7 +6,7 @@
    aside {
       flex: 7;
       
-      background: var(--purple);
+      background: var(--main-color-aside);
       color: var(--white);
 
       display: flex;
@@ -44,6 +44,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      background-color: var(--main-background);
    }
 
    .main-content {
@@ -62,6 +63,7 @@
          font-size: 24;
          margin: 64px 0 24px;
          font-family: 'Poppins', sans-serif;
+         color: var(--white);
       }
 
       form {
