@@ -1,11 +1,15 @@
+import { useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import illustrationImg from '../assets/images/illustration.svg';
 import logoImage from '../assets/images/logo.svg';
+import logoThemeDark from '../assets/images/logo-theme-dark.svg';
 import googleIconImg from '../assets/images/google-icon.svg';
 
 import { Button } from '../components/Button';
+import { SwitchButton } from '../components/SwitchButton';
 import { useAuth } from '../hooks/useAuth';
+import { ThemeColorContext } from "../contexts/ThemeColorContext";
 
 import '../styles/auth.scss';
 
@@ -24,7 +28,11 @@ export function Home() {
       history.push('/rooms/new');
    }
 
-
+   const {
+      colorTheme,
+      changeThemeColor
+   } = useContext(ThemeColorContext);
+   
    return (
 
       <div id="page-auth">
@@ -35,8 +43,10 @@ export function Home() {
          </aside>
 
          <main>
-            <div className="main-content">
-               <img src={logoImage} alt="Letmeask" />
+            <SwitchButton />
+                        
+            <div className="main-content">               
+               <img src={colorTheme === 'light' ? logoImage : logoThemeDark } alt="Letmeask" />
 
                <button
                   className="creat-room"

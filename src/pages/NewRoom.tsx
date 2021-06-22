@@ -3,10 +3,12 @@ import { Link } from 'react-router-dom'
 
 import illustrationImg from '../assets/images/illustration.svg';
 import logoImage from '../assets/images/logo.svg';
+import logoThemeDark from '../assets/images/logo-theme-dark.svg';
 
 import { Button } from '../components/Button';
 import { useAuth } from '../hooks/useAuth';
-
+import { SwitchButton } from '../components/SwitchButton';
+import { ThemeColorContext } from "../contexts/ThemeColorContext";
 import '../styles/auth.scss';
 
 
@@ -14,6 +16,11 @@ export function NewRoom() {
 
    const { user } =  useAuth();
 
+   const {
+      colorTheme,
+      changeThemeColor
+   } = useContext(ThemeColorContext);
+   
    return (
 
       <div id="page-auth">
@@ -24,8 +31,9 @@ export function NewRoom() {
          </aside>
          
          <main>
+         <SwitchButton />
             <div className="main-content">
-               <img src={logoImage} alt="Letmeask" />               
+            <img src={colorTheme === 'light' ? logoImage : logoThemeDark } alt="Letmeask" />              
                <h2>Criar uma nova sala</h2>             
                
                <form>
