@@ -4,6 +4,8 @@ import illustrationImg from '../assets/images/illustration.svg';
 import logoImage from '../assets/images/logo.svg';
 import googleIconImg from '../assets/images/google-icon.svg';
 
+import {firebase, auth} from '../services/firebase';
+
 import '../styles/auth.scss';
 
 import { Button } from '../components/Button';
@@ -12,9 +14,18 @@ export function Home() {
    
    const history = useHistory();
 
-   function navigateTOnewRoom() {
-      history.push('/rooms/new');
+   /*
+      *  popup - google athentication 
+   */ 
+   function handleCreateRoom() {
+      const provider = new firebase.auth.GoogleAuthProvider();
+      
+      auth.signInWithPopup(provider).then(result => {
+         history.push('/rooms/new');
+      });
+      
    }
+
 
    return (
       
@@ -31,7 +42,7 @@ export function Home() {
 
                <button 
                   className="creat-room" 
-                  onClick={navigateTOnewRoom}
+                  onClick={handleCreateRoom}                  
                >
                   <img src={googleIconImg} alt="Logo do Google" />
                   Crie sua sala com Google
