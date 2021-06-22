@@ -1,3 +1,24 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+:root {
+   --light-background: #f8f8f8;
+   --light-black:#29292e;
+   --light-gray: #a8a8b3;
+   --purple: #835afd;
+   --white: #ffffff;
+   --grimy-white: #f8f8f8;
+   --red-google: #ea4335;
+}
+
 body {
-   background:lightblue;
+   background-color: var(--light-background);
+   color: var(--light-black);
+}
+
+body, input, button, textarea {
+   font: 400 16px 'Roboto', sans-serif;
 }
