@@ -5,17 +5,31 @@
 }
 
 :root {
-   --light-background: #f8f8f8;
-   --light-black:#29292e;
-   --light-gray: #a8a8b3;
-   --medium-gray:#737380;
-   --purple: #835afd;
-   --white: #ffffff;
-   --off-white: #f8f8f8;
-   --red-google: #ea4335;
-   --hot-pink:#e559f9;
 
-
+   .light-theme.actived {
+      --main-background: #f8f8f8;
+      --light-black:#29292e;
+      --light-gray: #a8a8b3;
+      --medium-gray:#737380;
+      --main-color: #835afd;
+      --main-color-aside:#835afd;
+      --white: #ffffff;
+      --off-white: #f8f8f8;
+      --red-google: #ea4335;
+      --hot-pink:#e559f9;
+   }
+   .dark-theme.actived {
+      --main-background: #121214;
+      --light-black:#29292e;
+      --light-gray: #a8a8b3;
+      --medium-gray:#a6a6a8;
+      --main-color: #835afd;
+      --main-color-aside:#000000;
+      --white: #ffffff;
+      --off-white: #f8f8f8;
+      --red-google: #ea4335;
+      --hot-pink:#e559f9;
+   }
 }
 
 body {
@@ -26,3 +40,16 @@ body {
 body, input, button, textarea {
    font: 400 16px 'Roboto', sans-serif;
 }
+
+/* --------- DARK MODE ------------*/
+/*
+.light-theme.actived {
+   :root {
+      background: var(--light-dark);
+   }
+   
+}
+.dark-theme.actived {
+  
+   background: var(--theme-dark);
+}*/
