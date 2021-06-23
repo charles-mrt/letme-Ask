@@ -1,14 +1,16 @@
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { NewRoom } from "./pages/NewRoom";
 import { Home } from "./pages/Home";
+import { Room } from './pages/Room';
 
 import { AuthContextProvider } from './contexts/AuthContext';
 import { ThemeColorContext } from './contexts/ThemeColorContext';
 
+
 function App() {
 
-  let [colorTheme, setColorTheme] = useState('theme-color');
+  let [colorTheme, setColorTheme] = useState('');
 
   useEffect(() => {
     const currentThemeColor = localStorage.getItem('theme-color');
@@ -34,10 +36,15 @@ function App() {
     <BrowserRouter>
       <ThemeColorContext.Provider value={{ changeThemeColor, colorTheme }}>
         <div className={colorTheme === 'dark' ? 'dark-theme actived' : 'light-theme actived'}>
+
           <AuthContextProvider>
-            <Route path="/" exact component={Home} />
-            <Route path="/rooms/new" component={NewRoom} />
+            <Switch>
+              <Route path="/" exact component={Home} />
+              <Route path="/rooms/new" component={NewRoom} />
+              <Route path="/rooms/:id" component={Room} />
+            </Switch>
           </AuthContextProvider>
+          
         </div>
       </ThemeColorContext.Provider>
     </BrowserRouter>
