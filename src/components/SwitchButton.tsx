@@ -9,10 +9,7 @@ import '../styles/switchButton.scss';
 /* function switch theme color*/
 export function SwitchButton() {
 
-   const {
-      colorTheme,
-      changeThemeColor
-   } = useContext(ThemeColorContext);
+   const { colorTheme, changeThemeColor } = useContext(ThemeColorContext);
 
    return (
 
