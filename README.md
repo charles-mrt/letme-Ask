@@ -36,6 +36,9 @@ $ yarn start
 ```
 The app will be available for access on your browser at http://localhost:3000
 
+firebase rules access:
+- [Firebase rules](https://gist.github.com/charles-mrt/d48256abbd8ce748c6d09af3e79dba83) 
+
 ## Layout
 
 You can view the project layout through the links below:
