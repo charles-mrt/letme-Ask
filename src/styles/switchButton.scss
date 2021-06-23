@@ -3,7 +3,7 @@
    border: 0px;
    width: 35px;
    height: 35px;
-   margin: 5px 5px 0;
+   margin: 30px 5px 0;
 
    position: fixed;
    top:0;
@@ -15,8 +15,8 @@
       transition: 0.3s;
       color:var(--main-color);
 
-      &:hover {   
-         transform: rotate(45deg); 
+      &:hover {            
+         color:var(--hot-pink);
       }
    }
 }
