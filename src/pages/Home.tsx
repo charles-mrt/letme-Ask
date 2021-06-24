@@ -10,8 +10,6 @@ import { SwitchButton } from '../components/SwitchButton';
 import { LogoTheme } from '../components/LogoTheme';
 import { useAuth } from '../hooks/useAuth';
 
-import { ThemeColorContext } from "../contexts/ThemeColorContext";
-
 import { database } from '../services/firebase';
 
 import '../styles/auth.scss';
@@ -47,6 +45,12 @@ export function Home() {
          alert("Room | " + roomCode + " | does not exist 😢 "); 
          return;
       }
+
+      if (roomRef.val().endedAt ) {
+         alert("Room | " + roomCode + " | already closed 😢 ");
+         return; 
+      }
+
 
       history.push(`/rooms/${roomCode}`);
    }
