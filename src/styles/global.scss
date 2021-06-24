@@ -18,7 +18,8 @@
       --off-white: #f8f8f8;
       --red-google: #ea4335;
       --hot-pink:#e559f9;
-      --title: #29292e;      
+      --title: #29292e;  
+      --underline: #e2e2e2;    
    }
    .dark-theme {
       --main-background: #121214;
@@ -32,6 +33,7 @@
       --red-google: #e91e63;
       --hot-pink:#e559f9;
       --title: #f3f3f3;
+      --underline: #424242;
    }
 }
 
@@ -42,5 +44,8 @@ body {
 
 body, input, button, textarea {
    font: 400 16px 'Roboto', sans-serif;
+}
+html {
+   height: 100vh;
 }
 
