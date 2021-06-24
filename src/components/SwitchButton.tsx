@@ -9,16 +9,16 @@ import '../styles/switchButton.scss';
 /* function switch theme color*/
 export function SwitchButton() {
 
-   const { colorTheme, changeThemeColor } = useContext(ThemeColorContext);
+   const { theme, toggleTheme } = useContext(ThemeColorContext);
 
    return (
 
       <button
          id= "SwitchButton"
-         className={colorTheme === 'dark' ? 'darkActive' : 'lightActive'}
-         onClick={() => changeThemeColor('dark')}
+         className={theme === 'dark' ? 'darkActive' : 'lightActive'}
+         onClick={() => toggleTheme()}
       >
-         {colorTheme === "light" ? <FiSun /> : <FiMoon />}
+         {theme === "light" ? <FiSun /> : <FiMoon />}
       </button>
 
    )
