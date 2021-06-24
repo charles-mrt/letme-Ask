@@ -1,14 +1,10 @@
-import { FormEvent, useContext, useEffect, useState } from 'react';
+import { FormEvent, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-import logoImg from '../assets/images/logo.svg';
-import logoThemeDark from '../assets/images/logo-theme-dark.svg';
-
+import { LogoTheme } from '../components/LogoTheme';
 import { Button } from '../components/Button';
 import { SwitchButton } from '../components/SwitchButton';
 import { RoomCode } from '../components/RoomCode';
-
-import { ThemeColorContext } from "../contexts/ThemeColorContext";
 
 import { useAuth } from '../hooks/useAuth';
 import { database } from '../services/firebase';
@@ -50,8 +46,6 @@ export function Room() {
    const [newQuestion, setNewQuestion] = useState('');
    const [questions, setQuestions] = useState<Question[]>([])
    const [title, setTitle] = useState('');
-
-   const { colorTheme } = useContext(ThemeColorContext);
 
    useEffect(() => {
       const roomRef = database.ref(`rooms/${roomId}`);
@@ -110,7 +104,7 @@ export function Room() {
          <header>
             <SwitchButton />
             <div className="content">
-               <img src={colorTheme === 'light' ? logoThemeDark : logoImg} alt="Letmeask" />
+               <LogoTheme />
                <RoomCode code={roomId} />
             </div>
          </header>

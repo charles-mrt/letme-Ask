@@ -1,14 +1,13 @@
-import { FormEvent, useContext, useState } from 'react';
+import { FormEvent, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import illustrationImg from '../assets/images/illustration.svg';
-import logoImage from '../assets/images/logo.svg';
-import logoThemeDark from '../assets/images/logo-theme-dark.svg';
+
 import googleIconImg from '../assets/images/google-icon.svg';
 
 import { Button } from '../components/Button';
 import { SwitchButton } from '../components/SwitchButton';
-
+import { LogoTheme } from '../components/LogoTheme';
 import { useAuth } from '../hooks/useAuth';
 
 import { ThemeColorContext } from "../contexts/ThemeColorContext";
@@ -16,7 +15,6 @@ import { ThemeColorContext } from "../contexts/ThemeColorContext";
 import { database } from '../services/firebase';
 
 import '../styles/auth.scss';
-import { BADFAMILY } from 'dns';
 
 
 
@@ -25,7 +23,6 @@ export function Home() {
 
    const history = useHistory();
    const { user, signInWithGoogle } = useAuth();
-   const { colorTheme } = useContext(ThemeColorContext);
    const [roomCode, setRoomCode] = useState('');
 
    // redirect user if logged in
@@ -67,9 +64,8 @@ export function Home() {
          <main>
             <SwitchButton />
 
-            <div className="main-content">
-               <img src={colorTheme === 'light' ? logoImage : logoThemeDark} alt="Letmeask" />
-
+            <div className="main-content">              
+               <LogoTheme />
                <button
                   className="creat-room"
                   onClick={handleCreateRoom}
