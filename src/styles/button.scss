@@ -25,4 +25,10 @@
    img {
       margin-right: 8px;        
    }
+
+   &.outlined {
+      background: var(--white);
+      border: 1px solid var(--main-color);
+      color: var(--main-color);
+   }
 }
