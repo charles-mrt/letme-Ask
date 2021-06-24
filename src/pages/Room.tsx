@@ -16,9 +16,6 @@ import { FiThumbsUp } from 'react-icons/fi';
 
 import '../styles/room.scss';
 
-
-
-
 type RoomParams = {
    id: string;
 }

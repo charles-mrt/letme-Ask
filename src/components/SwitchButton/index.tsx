@@ -1,9 +1,9 @@
 import { useContext } from 'react';
-import { ThemeColorContext } from "../contexts/ThemeColorContext";
+import { ThemeColorContext } from "../../contexts/ThemeColorContext";
 
 import { FiMoon, FiSun } from 'react-icons/fi';
 
-import '../styles/switchButton.scss';
+import './styles.scss';
 
 
 /* function switch theme color*/

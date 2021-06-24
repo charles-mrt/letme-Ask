@@ -8,9 +8,9 @@ import { Button } from '../components/Button';
 import { useAuth } from '../hooks/useAuth';
 import { SwitchButton } from '../components/SwitchButton';
 
-import '../styles/auth.scss';
 import { database } from '../services/firebase';
 
+import '../styles/auth.scss';
 
 export function NewRoom() {
 
