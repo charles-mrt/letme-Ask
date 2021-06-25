@@ -8,6 +8,26 @@
      margin-top: 8px;
    }
  
+   &.highLighted {   
+    -webkit-box-shadow: 0px 0px 12px 0px var(--main-color); 
+    box-shadow: 0px 0px 12px 0px var(--main-color);
+    margin:20px 0;
+    
+    p {
+      color: var(--title);
+    }
+    
+    footer .user-info span {
+      color: var(--title);      
+    }
+
+   
+  }
+
+  &.answered {
+    background: var(--background-three);
+  }
+
    p {
      color: var(--title);
    }
@@ -33,6 +53,11 @@
          color: var(--title);
          font-size: 14px;
        }
+     }
+
+     > div {
+       display: flex;
+       gap: 16px;
      }
  
      button {
