@@ -11,7 +11,7 @@ import { database } from '../services/firebase';
 import { useRoom } from '../hooks/useRoom';
 import { Question } from '../components/Question';
 
-import { FiThumbsUp } from 'react-icons/fi';
+import { FiThumbsUp, FiCheckSquare } from 'react-icons/fi';
 
 
 import '../styles/room.scss';
@@ -117,19 +117,25 @@ export function Room() {
                         key={question.id}
                         content={question.content}
                         author={question.author}
+                        isAnswered={question.isAnswered}
+                        isHighLighted={question.isHighlighted}
                      >
-                        <button
-                           className={`like-button ${question.likeId ? 'liked' : ''}`}
-                           type="button"
-                           aria-label="Marcar como gostei"
-                           onClick={() => handleLikeQuestion(question.id, question.likeId)}
-                        >
-                           { question.likeCount > 0 && <span>{question.likeCount}</span> }
-                          
-                          <FiThumbsUp/>
-                          
-                        </button>
 
+                        {!question.isAnswered ? (
+                           <button
+                              className={`like-button ${question.likeId ? 'liked' : ''}`}
+                              type="button"
+                              aria-label="Marcar como gostei"
+                              onClick={() => handleLikeQuestion(question.id, question.likeId)}
+                           >
+                              { question.likeCount > 0 && <span>{question.likeCount}</span>}
+
+                              <FiThumbsUp />
+
+                           </button>
+                        ) : (
+                              <FiCheckSquare size={20} color={"gray"} title={"respondida"}/>
+                        )}
                      </Question>
                   );
                })}
